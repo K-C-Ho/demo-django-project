@@ -1,0 +1,731 @@
+INFO 2026-02-22 12:22:22,348 cli 12524 9664 Starting server at tcp:port=8000:interface=0.0.0.0
+INFO 2026-02-22 12:22:22,349 server 12524 9664 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2026-02-22 12:22:22,349 server 12524 9664 Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2026-02-22 12:22:22,349 server 12524 9664 Listening on TCP address 0.0.0.0:8000
+INFO 2026-02-22 12:22:27,595 consumers 12524 9664 User admin connected to room dm-5f21abe6-b20c5e67
+INFO 2026-02-22 12:22:29,442 consumers 12524 9664 User admin disconnected from room dm-5f21abe6-b20c5e67
+INFO 2026-02-22 12:22:29,481 consumers 12524 9664 User admin connected to room dm-5f21abe6-b20c5e67
+INFO 2026-02-22 12:22:52,925 consumers 12524 9664 User admin connected to room dm-5f21abe6-b20c5e67
+INFO 2026-02-22 12:22:53,598 consumers 12524 9664 User admin disconnected from room dm-5f21abe6-b20c5e67
+INFO 2026-02-22 12:22:53,622 consumers 12524 9664 User admin connected to room dm-5f21abe6-b20c5e67
+INFO 2026-02-22 12:22:54,455 consumers 12524 9664 User admin disconnected from room dm-5f21abe6-b20c5e67
+INFO 2026-02-22 12:22:54,479 consumers 12524 9664 User admin connected to room dm-5f21abe6-b20c5e67
+INFO 2026-02-22 12:22:55,083 consumers 12524 9664 User admin disconnected from room dm-5f21abe6-b20c5e67
+INFO 2026-02-22 12:26:04,105 server 12524 9664 Killed 1 pending application instances
+INFO 2026-02-22 12:26:13,022 cli 36064 35444 Starting server at tcp:port=8000:interface=0.0.0.0
+INFO 2026-02-22 12:26:13,023 server 36064 35444 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2026-02-22 12:26:13,024 server 36064 35444 Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2026-02-22 12:26:13,024 server 36064 35444 Listening on TCP address 0.0.0.0:8000
+INFO 2026-02-22 12:26:16,281 consumers 36064 35444 User admin connected to room dm-5f21abe6-b20c5e67
+INFO 2026-02-22 15:40:27,662 server 36064 35444 Killed 1 pending application instances
+INFO 2026-03-08 22:28:03,217 autoreload 32088 32184 Watching for file changes with StatReloader
+INFO 2026-03-08 22:28:03,641 server 32088 25288 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2026-03-08 22:28:03,642 server 32088 25288 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2026-03-08 22:28:03,643 server 32088 25288 Listening on TCP address 127.0.0.1:8000
+INFO 2026-03-08 22:28:17,794 runserver 32088 25288 [mHTTP GET / 200 [0.03, 127.0.0.1:54345][0m
+INFO 2026-03-08 22:28:17,936 runserver 32088 25288 [mHTTP GET /static/js/base.js 200 [0.10, 127.0.0.1:54345][0m
+WARNING 2026-03-08 22:28:18,015 log 32088 18260 Not Found: /favicon.ico
+WARNING 2026-03-08 22:28:18,016 runserver 32088 25288 [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:54345][0m
+INFO 2026-03-08 22:28:21,929 runserver 32088 25288 [mHTTP GET /accounts/login/ 200 [0.03, 127.0.0.1:54345][0m
+INFO 2026-03-08 22:28:30,797 runserver 32088 25288 [32mHTTP POST /accounts/login/ 302 [0.57, 127.0.0.1:54345][0m
+INFO 2026-03-08 22:28:30,860 runserver 32088 25288 [mHTTP GET /profile/ 200 [0.06, 127.0.0.1:54345][0m
+INFO 2026-03-08 22:28:30,888 runserver 32088 25288 [mHTTP GET /static/images/default-avatar.png 200 [0.00, 127.0.0.1:54345][0m
+INFO 2026-03-08 22:28:33,303 runserver 32088 25288 [mHTTP GET /chat/ 200 [0.06, 127.0.0.1:54345][0m
+INFO 2026-03-08 22:28:33,321 runserver 32088 25288 [mHTTP GET /static/js/chat/room_list.js 200 [0.00, 127.0.0.1:54345][0m
+INFO 2026-03-08 22:28:37,282 runserver 32088 25288 [mHTTP GET /chat/room/dm-5f21abe6-b20c5e67/ 200 [0.06, 127.0.0.1:54345][0m
+INFO 2026-03-08 22:28:37,305 runserver 32088 25288 WebSocket HANDSHAKING /ws/chat/dm-5f21abe6-b20c5e67/ [127.0.0.1:58055]
+INFO 2026-03-08 22:28:37,403 runserver 32088 25288 WebSocket CONNECT /ws/chat/dm-5f21abe6-b20c5e67/ [127.0.0.1:58055]
+INFO 2026-03-08 22:28:37,508 consumers 32088 25288 User admin connected to room dm-5f21abe6-b20c5e67
+INFO 2026-03-08 22:28:44,228 runserver 32088 25288 [mHTTP GET / 200 [0.01, 127.0.0.1:62624][0m
+INFO 2026-03-08 22:28:44,269 runserver 32088 25288 [mHTTP GET /static/js/base.js 200 [0.00, 127.0.0.1:62624][0m
+INFO 2026-03-08 22:28:45,697 runserver 32088 25288 [mHTTP GET /accounts/signup/ 200 [0.01, 127.0.0.1:62624][0m
+INFO 2026-03-08 22:28:45,829 runserver 32088 25288 [mHTTP GET /accounts/signup/ 200 [0.01, 127.0.0.1:62624][0m
+INFO 2026-03-08 22:28:46,940 runserver 32088 25288 [mHTTP GET /accounts/login/ 200 [0.01, 127.0.0.1:62624][0m
+INFO 2026-03-08 22:28:53,688 runserver 32088 25288 [32mHTTP POST /accounts/login/ 302 [0.53, 127.0.0.1:62624][0m
+INFO 2026-03-08 22:28:53,728 runserver 32088 25288 [mHTTP GET /profile/ 200 [0.04, 127.0.0.1:62624][0m
+INFO 2026-03-08 22:28:53,754 runserver 32088 25288 [mHTTP GET /static/images/default-avatar.png 200 [0.00, 127.0.0.1:62624][0m
+INFO 2026-03-08 22:28:55,134 runserver 32088 25288 [mHTTP GET /chat/ 200 [0.04, 127.0.0.1:62624][0m
+INFO 2026-03-08 22:28:55,150 runserver 32088 25288 [mHTTP GET /static/js/chat/room_list.js 200 [0.00, 127.0.0.1:62624][0m
+INFO 2026-03-08 22:28:57,337 runserver 32088 25288 [mHTTP GET /chat/room/dm-5f21abe6-b20c5e67/ 200 [0.04, 127.0.0.1:62624][0m
+INFO 2026-03-08 22:28:57,354 runserver 32088 25288 WebSocket HANDSHAKING /ws/chat/dm-5f21abe6-b20c5e67/ [127.0.0.1:58517]
+INFO 2026-03-08 22:28:57,366 runserver 32088 25288 WebSocket CONNECT /ws/chat/dm-5f21abe6-b20c5e67/ [127.0.0.1:58517]
+INFO 2026-03-08 22:28:57,390 consumers 32088 25288 User admin02 connected to room dm-5f21abe6-b20c5e67
+ERROR 2026-03-08 22:29:02,342 consumers 32088 25288 Error handling message: type object 'datetime.timezone' has no attribute 'now'
+ERROR 2026-03-09 14:52:45,006 signal 1 140089199958912 Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7f690d5d8d70>> raised: ModuleNotFoundError("No module named 'pywebpush'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/utils/dispatch/signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/fixups/django.py", line 103, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.12/site-packages/celery/fixups/django.py", line 154, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.12/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/checks/urls.py", line 44, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/checks/urls.py", line 63, in _load_all_namespaces
+    url_patterns = getattr(resolver, "url_patterns", [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/config/urls.py", line 28, in <module>
+    path('chat/', include('apps.chat.urls')),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/apps/chat/urls.py", line 2, in <module>
+    from . import views
+  File "/app/apps/chat/views.py", line 14, in <module>
+    from .tasks import generate_thumbnail
+  File "/app/apps/chat/tasks.py", line 8, in <module>
+    from pywebpush import webpush, WebPushException
+ModuleNotFoundError: No module named 'pywebpush'
+ERROR 2026-03-09 14:52:45,037 signal 1 140089199958912 Signal handler <promise@0x7f690d0be990 --> <bound method Celery._autodiscover_tasks of <Celery demo-django-project at 0x7f690d0d9370>>> raised: ModuleNotFoundError("No module named 'pywebpush'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/utils/dispatch/signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/vine/promises.py", line 161, in __call__
+    return self.throw()
+           ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/vine/promises.py", line 158, in __call__
+    retval = fun(*final_args, **final_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/base.py", line 805, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/base.py", line 814, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/base.py", line 809, in _autodiscover_tasks_from_names
+    return self.loader.autodiscover_tasks(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/loaders/base.py", line 220, in autodiscover_tasks
+    mod.__name__ for mod in autodiscover_tasks(packages or (),
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/loaders/base.py", line 246, in autodiscover_tasks
+    return [find_related_module(pkg, related_name) for pkg in packages]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/loaders/base.py", line 278, in find_related_module
+    raise e
+  File "/usr/local/lib/python3.12/site-packages/celery/loaders/base.py", line 270, in find_related_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/apps/chat/tasks.py", line 8, in <module>
+    from pywebpush import webpush, WebPushException
+ModuleNotFoundError: No module named 'pywebpush'
+ERROR 2026-03-09 14:58:02,767 signal 1 139640874482560 Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7f00ab035fa0>> raised: RuntimeError("Model class apps.notifications.models.PushSubscription doesn't declare an explicit app_label and isn't in an application in INSTALLED_APPS.")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/utils/dispatch/signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/fixups/django.py", line 103, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.12/site-packages/celery/fixups/django.py", line 154, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.12/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/checks/urls.py", line 44, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/checks/urls.py", line 63, in _load_all_namespaces
+    url_patterns = getattr(resolver, "url_patterns", [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/config/urls.py", line 28, in <module>
+    path('chat/', include('apps.chat.urls')),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/apps/chat/urls.py", line 2, in <module>
+    from . import views
+  File "/app/apps/chat/views.py", line 14, in <module>
+    from .tasks import generate_thumbnail
+  File "/app/apps/chat/tasks.py", line 12, in <module>
+    from apps.notifications.models import PushSubscription
+  File "/app/apps/notifications/models.py", line 5, in <module>
+    class PushSubscription(models.Model):
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 136, in __new__
+    raise RuntimeError(
+RuntimeError: Model class apps.notifications.models.PushSubscription doesn't declare an explicit app_label and isn't in an application in INSTALLED_APPS.
+ERROR 2026-03-09 14:58:02,814 signal 1 139640874482560 Signal handler <promise@0x7f00aac3a990 --> <bound method Celery._autodiscover_tasks of <Celery demo-django-project at 0x7f00aac48110>>> raised: RuntimeError("Model class apps.notifications.models.PushSubscription doesn't declare an explicit app_label and isn't in an application in INSTALLED_APPS.")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/utils/dispatch/signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/vine/promises.py", line 161, in __call__
+    return self.throw()
+           ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/vine/promises.py", line 158, in __call__
+    retval = fun(*final_args, **final_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/base.py", line 805, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/base.py", line 814, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/base.py", line 809, in _autodiscover_tasks_from_names
+    return self.loader.autodiscover_tasks(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/loaders/base.py", line 220, in autodiscover_tasks
+    mod.__name__ for mod in autodiscover_tasks(packages or (),
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/loaders/base.py", line 246, in autodiscover_tasks
+    return [find_related_module(pkg, related_name) for pkg in packages]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/loaders/base.py", line 270, in find_related_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/apps/chat/tasks.py", line 12, in <module>
+    from apps.notifications.models import PushSubscription
+  File "/app/apps/notifications/models.py", line 5, in <module>
+    class PushSubscription(models.Model):
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 136, in __new__
+    raise RuntimeError(
+RuntimeError: Model class apps.notifications.models.PushSubscription doesn't declare an explicit app_label and isn't in an application in INSTALLED_APPS.
+ERROR 2026-03-09 14:58:13,006 signal 1 140522616458112 Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7fcdf706d790>> raised: RuntimeError("Model class apps.notifications.models.PushSubscription doesn't declare an explicit app_label and isn't in an application in INSTALLED_APPS.")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/utils/dispatch/signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/fixups/django.py", line 103, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.12/site-packages/celery/fixups/django.py", line 154, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.12/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/checks/urls.py", line 44, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/checks/urls.py", line 63, in _load_all_namespaces
+    url_patterns = getattr(resolver, "url_patterns", [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/config/urls.py", line 28, in <module>
+    path('chat/', include('apps.chat.urls')),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/apps/chat/urls.py", line 2, in <module>
+    from . import views
+  File "/app/apps/chat/views.py", line 14, in <module>
+    from .tasks import generate_thumbnail
+  File "/app/apps/chat/tasks.py", line 12, in <module>
+    from apps.notifications.models import PushSubscription
+  File "/app/apps/notifications/models.py", line 5, in <module>
+    class PushSubscription(models.Model):
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 136, in __new__
+    raise RuntimeError(
+RuntimeError: Model class apps.notifications.models.PushSubscription doesn't declare an explicit app_label and isn't in an application in INSTALLED_APPS.
+ERROR 2026-03-09 14:58:13,051 signal 1 140522616458112 Signal handler <promise@0x7fcdf6b06990 --> <bound method Celery._autodiscover_tasks of <Celery demo-django-project at 0x7fcdf6b154f0>>> raised: RuntimeError("Model class apps.notifications.models.PushSubscription doesn't declare an explicit app_label and isn't in an application in INSTALLED_APPS.")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/utils/dispatch/signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/vine/promises.py", line 161, in __call__
+    return self.throw()
+           ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/vine/promises.py", line 158, in __call__
+    retval = fun(*final_args, **final_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/base.py", line 805, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/base.py", line 814, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/base.py", line 809, in _autodiscover_tasks_from_names
+    return self.loader.autodiscover_tasks(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/loaders/base.py", line 220, in autodiscover_tasks
+    mod.__name__ for mod in autodiscover_tasks(packages or (),
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/loaders/base.py", line 246, in autodiscover_tasks
+    return [find_related_module(pkg, related_name) for pkg in packages]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/loaders/base.py", line 270, in find_related_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/apps/chat/tasks.py", line 12, in <module>
+    from apps.notifications.models import PushSubscription
+  File "/app/apps/notifications/models.py", line 5, in <module>
+    class PushSubscription(models.Model):
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 136, in __new__
+    raise RuntimeError(
+RuntimeError: Model class apps.notifications.models.PushSubscription doesn't declare an explicit app_label and isn't in an application in INSTALLED_APPS.
+INFO 2026-03-09 22:59:35,346 autoreload 10580 32208 Watching for file changes with StatReloader
+INFO 2026-03-09 23:00:49,354 autoreload 10580 32208 C:\dev\my-github\Anthony6120\demo-django-project\config\settings\base.py changed, reloading.
+INFO 2026-03-09 23:00:50,640 autoreload 36416 11876 Watching for file changes with StatReloader
+INFO 2026-03-09 23:00:56,512 autoreload 22916 13028 Watching for file changes with StatReloader
+INFO 2026-03-09 23:03:37,636 autoreload 22916 13028 C:\dev\my-github\Anthony6120\demo-django-project\apps\notifications\apps.py changed, reloading.
+INFO 2026-03-09 23:03:38,946 autoreload 3312 26904 Watching for file changes with StatReloader
+INFO 2026-03-09 23:03:40,319 server 3312 14284 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2026-03-09 23:03:40,320 server 3312 14284 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2026-03-09 23:03:40,321 server 3312 14284 Listening on TCP address 127.0.0.1:8000
+INFO 2026-03-09 23:03:56,690 autoreload 3312 26904 C:\dev\my-github\Anthony6120\demo-django-project\apps\notifications\apps.py changed, reloading.
+INFO 2026-03-09 23:03:58,203 autoreload 31428 9224 Watching for file changes with StatReloader
+INFO 2026-03-09 23:03:58,634 server 31428 27536 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2026-03-09 23:03:58,634 server 31428 27536 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2026-03-09 23:03:58,635 server 31428 27536 Listening on TCP address 127.0.0.1:8000
+INFO 2026-03-09 23:04:55,779 autoreload 31428 9224 C:\dev\my-github\Anthony6120\demo-django-project\apps\chat\apps.py changed, reloading.
+INFO 2026-03-09 23:04:57,203 autoreload 9508 32952 Watching for file changes with StatReloader
+INFO 2026-03-09 23:04:57,648 server 9508 38764 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2026-03-09 23:04:57,648 server 9508 38764 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2026-03-09 23:04:57,649 server 9508 38764 Listening on TCP address 127.0.0.1:8000
+INFO 2026-03-09 23:05:11,601 autoreload 9508 32952 C:\dev\my-github\Anthony6120\demo-django-project\apps\chat\apps.py changed, reloading.
+INFO 2026-03-09 23:05:13,035 autoreload 31764 36948 Watching for file changes with StatReloader
+INFO 2026-03-09 23:05:54,057 autoreload 31764 36948 C:\dev\my-github\Anthony6120\demo-django-project\apps\chat\apps.py changed, reloading.
+INFO 2026-03-09 23:05:55,462 autoreload 3268 2680 Watching for file changes with StatReloader
+INFO 2026-03-09 23:05:55,988 server 3268 27324 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2026-03-09 23:05:55,988 server 3268 27324 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2026-03-09 23:05:55,989 server 3268 27324 Listening on TCP address 127.0.0.1:8000
+INFO 2026-03-09 23:07:05,155 autoreload 3268 2680 C:\dev\my-github\Anthony6120\demo-django-project\apps\accounts\apps.py changed, reloading.
+INFO 2026-03-09 23:07:06,572 autoreload 37780 11540 Watching for file changes with StatReloader
+INFO 2026-03-09 23:07:06,995 server 37780 20852 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2026-03-09 23:07:06,996 server 37780 20852 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2026-03-09 23:07:06,997 server 37780 20852 Listening on TCP address 127.0.0.1:8000
+INFO 2026-03-09 23:11:11,379 runserver 37780 20852 [mHTTP GET / 200 [0.13, 127.0.0.1:52574][0m
+INFO 2026-03-09 23:11:11,577 runserver 37780 20852 [mHTTP GET /static/js/base.js 200 [0.15, 127.0.0.1:52574][0m
+WARNING 2026-03-09 23:11:11,704 log 37780 14224 Not Found: /favicon.ico
+WARNING 2026-03-09 23:11:11,704 runserver 37780 20852 [33mHTTP GET /favicon.ico 404 [0.07, 127.0.0.1:52574][0m
+INFO 2026-03-09 23:20:50,875 autoreload 37780 11540 C:\dev\my-github\Anthony6120\demo-django-project\apps\chat\routing.py changed, reloading.
+INFO 2026-03-09 23:20:52,268 autoreload 3296 38160 Watching for file changes with StatReloader
+INFO 2026-03-09 23:20:52,711 server 3296 36724 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2026-03-09 23:20:52,711 server 3296 36724 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2026-03-09 23:20:52,711 server 3296 36724 Listening on TCP address 127.0.0.1:8000
+INFO 2026-03-09 23:42:37,891 autoreload 20536 2876 Watching for file changes with StatReloader
+INFO 2026-03-09 23:42:38,525 server 20536 22092 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2026-03-09 23:42:38,525 server 20536 22092 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2026-03-09 23:42:38,526 server 20536 22092 Listening on TCP address 127.0.0.1:8000
+INFO 2026-03-09 23:42:39,448 runserver 20536 22092 [mHTTP GET / 200 [0.03, 127.0.0.1:60226][0m
+INFO 2026-03-09 23:42:41,493 runserver 20536 22092 [mHTTP GET /accounts/login/ 200 [0.27, 127.0.0.1:60226][0m
+INFO 2026-03-09 23:42:46,368 runserver 20536 22092 [32mHTTP POST /accounts/login/ 302 [1.12, 127.0.0.1:60226][0m
+INFO 2026-03-09 23:42:46,483 runserver 20536 22092 [mHTTP GET /profile/ 200 [0.11, 127.0.0.1:60226][0m
+INFO 2026-03-09 23:42:46,687 runserver 20536 22092 [mHTTP GET /static/images/default-avatar.png 200 [0.17, 127.0.0.1:60226][0m
+INFO 2026-03-09 23:42:47,757 runserver 20536 22092 [mHTTP GET /chat/ 200 [0.06, 127.0.0.1:60226][0m
+INFO 2026-03-09 23:42:47,778 runserver 20536 22092 [mHTTP GET /static/js/chat/room_list.js 200 [0.00, 127.0.0.1:60226][0m
+INFO 2026-03-09 23:42:49,041 runserver 20536 22092 [mHTTP GET /chat/room/dm-5f21abe6-b20c5e67/ 200 [0.06, 127.0.0.1:60226][0m
+INFO 2026-03-09 23:42:49,061 runserver 20536 22092 WebSocket HANDSHAKING /ws/chat/dm-5f21abe6-b20c5e67/ [127.0.0.1:59231]
+INFO 2026-03-09 23:42:49,204 runserver 20536 22092 WebSocket CONNECT /ws/chat/dm-5f21abe6-b20c5e67/ [127.0.0.1:59231]
+INFO 2026-03-09 23:42:49,239 consumers 20536 22092 User admin connected to room dm-5f21abe6-b20c5e67
+ERROR 2026-03-09 23:47:05,036 server 20536 22092 Exception inside application: Connection closed by server.
+Traceback (most recent call last):
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\contrib\staticfiles\handlers.py", line 101, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\routing.py", line 48, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\sessions.py", line 44, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\sessions.py", line 261, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\middleware.py", line 24, in __call__
+    return await self.inner(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\routing.py", line 118, in __call__
+    return await application(
+           ^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\consumer.py", line 95, in app
+    return await consumer(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\consumer.py", line 58, in __call__
+    await await_many_dispatch(
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\utils.py", line 57, in await_many_dispatch
+    await task
+redis.exceptions.ConnectionError: Connection closed by server.
+INFO 2026-03-09 23:47:05,128 runserver 20536 22092 WebSocket DISCONNECT /ws/chat/dm-5f21abe6-b20c5e67/ [127.0.0.1:59231]
+INFO 2026-03-09 23:47:06,193 runserver 20536 22092 WebSocket HANDSHAKING /ws/chat/dm-5f21abe6-b20c5e67/ [127.0.0.1:64953]
+ERROR 2026-03-09 23:47:07,148 server 20536 22092 Exception inside application: could not receive data from server: Software caused connection abort (0x00002745/10053)
+Traceback (most recent call last):
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 244, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not receive data from server: Software caused connection abort (0x00002745/10053)
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\contrib\staticfiles\handlers.py", line 101, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\routing.py", line 48, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\sessions.py", line 44, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\sessions.py", line 261, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\auth.py", line 183, in __call__
+    await self.resolve_scope(scope)
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\auth.py", line 176, in resolve_scope
+    scope["user"]._wrapped = await get_user(scope)
+                             ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\asgiref\sync.py", line 504, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\db.py", line 13, in thread_handler
+    return super().thread_handler(loop, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\asgiref\sync.py", line 559, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\auth.py", line 38, in get_user
+    user_id = _get_user_session_key(session)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\auth.py", line 145, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(session[SESSION_KEY])
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 55, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 34, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\models\query.py", line 631, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\models\query.py", line 368, in __len__
+    self._fetch_all()
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\models\query.py", line 1954, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: could not receive data from server: Software caused connection abort (0x00002745/10053)
+
+INFO 2026-03-09 23:47:07,321 runserver 20536 22092 WebSocket DISCONNECT /ws/chat/dm-5f21abe6-b20c5e67/ [127.0.0.1:64953]
+INFO 2026-03-09 23:47:10,186 runserver 20536 22092 WebSocket HANDSHAKING /ws/chat/dm-5f21abe6-b20c5e67/ [127.0.0.1:53328]
+ERROR 2026-03-09 23:47:14,391 server 20536 22092 Exception inside application: connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+Traceback (most recent call last):
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 244, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\psycopg2\__init__.py", line 135, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\contrib\staticfiles\handlers.py", line 101, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\routing.py", line 48, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\sessions.py", line 44, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\sessions.py", line 261, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\auth.py", line 183, in __call__
+    await self.resolve_scope(scope)
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\auth.py", line 176, in resolve_scope
+    scope["user"]._wrapped = await get_user(scope)
+                             ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\asgiref\sync.py", line 504, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\db.py", line 13, in thread_handler
+    return super().thread_handler(loop, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\asgiref\sync.py", line 559, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\auth.py", line 38, in get_user
+    user_id = _get_user_session_key(session)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\channels\auth.py", line 145, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(session[SESSION_KEY])
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 55, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 34, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\models\query.py", line 631, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\models\query.py", line 368, in __len__
+    self._fetch_all()
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\models\query.py", line 1954, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+           ^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\backends\base\base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\dev\my-github\Anthony6120\demo-django-project\.venv\Lib\site-packages\psycopg2\__init__.py", line 135, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+INFO 2026-03-09 23:47:14,441 runserver 20536 22092 WebSocket DISCONNECT /ws/chat/dm-5f21abe6-b20c5e67/ [127.0.0.1:53328]
+INFO 2026-03-09 15:54:35,805 cli 1 140451593137024 Starting server at tcp:port=8000:interface=0.0.0.0
+INFO 2026-03-09 15:54:35,806 server 1 140451593137024 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2026-03-09 15:54:35,806 server 1 140451593137024 Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2026-03-09 15:54:35,807 server 1 140451593137024 Listening on TCP address 0.0.0.0:8000
+WARNING 2026-03-09 15:55:59,419 base 1 140451488200384 Session data corrupted
+WARNING 2026-03-09 15:56:00,823 base 1 140451488200384 Session data corrupted
+INFO 2026-03-09 15:56:47,592 server 1 140451593137024 Killed 0 pending application instances
+INFO 2026-03-09 16:07:46,498 cli 1 139955150875520 Starting server at tcp:port=8000:interface=0.0.0.0
+INFO 2026-03-09 16:07:46,499 server 1 139955150875520 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2026-03-09 16:07:46,499 server 1 139955150875520 Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2026-03-09 16:07:46,500 server 1 139955150875520 Listening on TCP address 0.0.0.0:8000
+WARNING 2026-03-09 16:08:01,173 log 1 139955025843904 Not Found: /favicon.ico
+INFO 2026-03-09 16:08:12,338 consumers 1 139955150875520 User admin connected to room dm-5f21abe6-b20c5e67
+INFO 2026-03-09 16:08:19,785 consumers 1 139955150875520 User admin disconnected from room dm-5f21abe6-b20c5e67
+INFO 2026-03-09 16:15:32,302 server 1 139955150875520 Killed 0 pending application instances

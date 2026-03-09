@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Welcome - Real-Time Chat{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8 text-center">
+        <h1 class="display-4 fw-bold mb-4">
+            <i class="bi bi-chat-dots-fill text-primary"></i>
+            Real-Time Chat
+        </h1>
+        <p class="lead text-muted mb-5">
+            Connect with friends and communities through instant messaging.
+            Built with Django Channels, Redis, and WebSockets.
+        </p>
+        
+        {% if user.is_authenticated %}
+        <div class="d-flex justify-content-center gap-3">
+            <a href="{% url 'chat:room_list' %}" class="btn btn-primary btn-lg px-4">
+                <i class="bi bi-chat-left-text me-2"></i>Enter Chat
+            </a>
+            <a href="{% url 'chat:create_room' %}" class="btn btn-outline-primary btn-lg px-4">
+                <i class="bi bi-plus-circle me-2"></i>Create Room
+            </a>
+        </div>
+        {% else %}
+        <div class="d-flex justify-content-center gap-3">
+            <a href="{% url 'account_login' %}" class="btn btn-primary btn-lg px-4">
+                <i class="bi bi-box-arrow-in-right me-2"></i>Login
+            </a>
+            <a href="{% url 'account_signup' %}" class="btn btn-outline-primary btn-lg px-4">
+                <i class="bi bi-person-plus me-2"></i>Sign Up
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="row mt-5 pt-5">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 text-center p-4">
+            <div class="card-body">
+                <i class="bi bi-lightning-charge-fill text-primary" style="font-size: 3rem;"></i>
+                <h5 class="card-title mt-3">Real-Time Messaging</h5>
+                <p class="card-text text-muted">
+                    Instant message delivery with WebSockets. See messages appear as they're sent.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 text-center p-4">
+            <div class="card-body">
+                <i class="bi bi-people-fill text-primary" style="font-size: 3rem;"></i>
+                <h5 class="card-title mt-3">Public & Private Rooms</h5>
+                <p class="card-text text-muted">
+                    Create public chat rooms or private spaces for your team or friends.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 text-center p-4">
+            <div class="card-body">
+                <i class="bi bi-circle-fill text-success" style="font-size: 3rem;"></i>
+                <h5 class="card-title mt-3">Online Presence</h5>
+                <p class="card-text text-muted">
+                    See who's online with real-time presence indicators powered by Redis.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 text-center p-4">
+            <div class="card-body">
+                <i class="bi bi-three-dots text-primary" style="font-size: 3rem;"></i>
+                <h5 class="card-title mt-3">Typing Indicators</h5>
+                <p class="card-text text-muted">
+                    Know when someone is typing a response to you in real-time.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 text-center p-4">
+            <div class="card-body">
+                <i class="bi bi-bell-fill text-primary" style="font-size: 3rem;"></i>
+                <h5 class="card-title mt-3">Push Notifications</h5>
+                <p class="card-text text-muted">
+                    Never miss a message with WebPush notifications on desktop and mobile.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 text-center p-4">
+            <div class="card-body">
+                <i class="bi bi-shield-lock-fill text-primary" style="font-size: 3rem;"></i>
+                <h5 class="card-title mt-3">End-to-End Encryption</h5>
+                <p class="card-text text-muted">
+                    Optional E2E encryption for private conversations (demo feature).
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tech Stack Section -->
+<div class="row mt-5 pt-5">
+    <div class="col-12 text-center">
+        <h3 class="mb-4">Built With Modern Technology</h3>
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
+            <span class="badge bg-success fs-6 py-2 px-3">Django</span>
+            <span class="badge bg-danger fs-6 py-2 px-3">Django Channels</span>
+            <span class="badge bg-warning text-dark fs-6 py-2 px-3">Redis</span>
+            <span class="badge bg-primary fs-6 py-2 px-3">PostgreSQL</span>
+            <span class="badge bg-info fs-6 py-2 px-3">WebSockets</span>
+            <span class="badge bg-secondary fs-6 py-2 px-3">Celery</span>
+        </div>
+    </div>
+</div>
+{% endblock content %}

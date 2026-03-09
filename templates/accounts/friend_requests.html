@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load i18n %}
+
+{% block title %}Friend Requests - Real-Time Chat{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <h3 class="mb-4"><i class="bi bi-person-plus me-2"></i>Friend Requests</h3>
+        
+        <!-- Received Requests -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">Received Requests</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                {% for request in received_requests %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        <img src="{{ request.sender.avatar_url }}" alt="{{ request.sender.username }}" class="rounded-circle me-3" style="width: 50px; height: 50px;">
+                        <div>
+                            <h6 class="mb-0">{{ request.sender.username }}</h6>
+                            <small class="text-muted">Sent {{ request.created_at|timesince }} ago</small>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="{% url 'accounts:accept_friend_request' request.id %}" class="btn btn-success btn-sm me-2">
+                            <i class="bi bi-check-lg"></i> Accept
+                        </a>
+                        <a href="{% url 'accounts:reject_friend_request' request.id %}" class="btn btn-outline-danger btn-sm">
+                            <i class="bi bi-x-lg"></i> Decline
+                        </a>
+                    </div>
+                </li>
+                {% empty %}
+                <li class="list-group-item text-center text-muted py-4">
+                    No pending friend requests
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <!-- Sent Requests -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Sent Requests</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                {% for request in sent_requests %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        <img src="{{ request.receiver.avatar_url }}" alt="{{ request.receiver.username }}" class="rounded-circle me-3" style="width: 50px; height: 50px;">
+                        <div>
+                            <h6 class="mb-0">{{ request.receiver.username }}</h6>
+                            <small class="text-muted">Sent {{ request.created_at|timesince }} ago</small>
+                        </div>
+                    </div>
+                    <span class="badge bg-warning">Pending</span>
+                </li>
+                {% empty %}
+                <li class="list-group-item text-center text-muted py-4">
+                    No pending sent requests
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

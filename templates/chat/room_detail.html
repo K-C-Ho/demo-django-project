@@ -1,0 +1,847 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load i18n %}
+
+{% block title %}{{ room.name }} - Real-Time Chat{% endblock %}
+
+{% block main_class %}container-fluid py-0{% endblock %}
+
+{% block extra_css %}
+<style>
+    .chat-container {
+        height: calc(100vh - 70px);
+        display: flex;
+    }
+
+    .chat-sidebar {
+        width: 280px;
+        background: white;
+        border-right: 1px solid #e2e8f0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .chat-main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: #f8fafc;
+    }
+
+    .chat-header {
+        padding: 16px 20px;
+        background: white;
+        border-bottom: 1px solid #e2e8f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .chat-messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px;
+    }
+
+    .message {
+        display: flex;
+        margin-bottom: 16px;
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .message.own {
+        flex-direction: row-reverse;
+    }
+
+    .message-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 0 12px;
+    }
+
+    .message-content {
+        max-width: 60%;
+    }
+
+    .message-bubble {
+        padding: 12px 16px;
+        border-radius: 18px;
+        background: white;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .message.own .message-bubble {
+        background: var(--primary-color);
+        color: black;
+    }
+
+    .message-meta {
+        font-size: 0.75rem;
+        color: #64748b;
+        margin-top: 4px;
+    }
+
+    .message.own .message-meta {
+        text-align: right;
+    }
+
+    .chat-input-container {
+        padding: 16px 20px;
+        background: white;
+        border-top: 1px solid #e2e8f0;
+    }
+
+    .chat-input-form {
+        display: flex;
+        gap: 12px;
+    }
+
+    .chat-input {
+        flex: 1;
+        border-radius: 24px;
+        padding: 12px 20px;
+        border: 1px solid #e2e8f0;
+        resize: none;
+        max-height: 120px;
+    }
+
+    .chat-input:focus {
+        outline: none;
+        border-color: var(--primary-color);
+    }
+
+    .typing-indicator {
+        padding: 8px 20px;
+        font-size: 0.875rem;
+        color: #64748b;
+        font-style: italic;
+        min-height: 32px;
+    }
+
+    .members-list {
+        overflow-y: auto;
+        flex: 1;
+    }
+
+    .member-item {
+        display: flex;
+        align-items: center;
+        padding: 10px 16px;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .member-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        margin-right: 12px;
+    }
+
+    .member-status {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border: 2px solid white;
+    }
+
+    .member-status.online {
+        background: var(--success-color);
+    }
+
+    .member-status.offline {
+        background: #94a3b8;
+    }
+
+    /* Reply preview */
+    .reply-preview {
+        background: #f1f5f9;
+        padding: 8px 16px;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        display: none;
+    }
+
+    .reply-preview.active {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* File preview */
+    .file-preview {
+        display: none;
+        padding: 8px 16px;
+        background: #f1f5f9;
+        margin-bottom: 8px;
+        border-radius: 8px;
+    }
+
+    .file-preview.active {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    /* Message actions */
+    .message-actions {
+        display: none;
+        gap: 4px;
+    }
+
+    .message:hover .message-actions {
+        display: flex;
+    }
+
+    .message-action-btn {
+        padding: 4px 8px;
+        border: none;
+        background: transparent;
+        color: #64748b;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .message-action-btn:hover {
+        background: #f1f5f9;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .chat-sidebar {
+            position: fixed;
+            left: -280px;
+            top: 56px;
+            height: calc(100vh - 56px);
+            z-index: 1000;
+            transition: left 0.3s ease;
+        }
+        
+        .chat-sidebar.show {
+            left: 0;
+        }
+        
+        .message-content {
+            max-width: 80%;
+        }
+    }
+</style>
+{% endblock extra_css %}
+
+{% block content %}
+<div class="chat-container">
+    <!-- Sidebar - Members -->
+    <div class="chat-sidebar" id="chatSidebar">
+        <div class="p-3 border-bottom">
+            <h6 class="mb-0">
+                <i class="bi bi-people me-2"></i>Members
+                <span class="badge bg-secondary ms-2" id="onlineCount">0</span>
+            </h6>
+        </div>
+        <div class="members-list" id="membersList">
+            {% for membership in memberships %}
+            <div class="member-item" data-user-id="{{ membership.user.id }}">
+                <div class="position-relative">
+                    <img src="{{ membership.user.avatar_url }}" alt="{{ membership.user.username }}" class="member-avatar">
+                    <span class="member-status {% if membership.user.id|slugify in online_user_ids %}online{% else %}offline{% endif %}"></span>
+                </div>
+                <div>
+                    <div class="fw-medium">{{ membership.user.username }}</div>
+                    <small class="text-muted">{{ membership.role }}</small>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <!-- Main Chat Area -->
+    <div class="chat-main">
+        <!-- Header -->
+        <div class="chat-header">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-link d-md-none me-2" onclick="toggleSidebar()">
+                    <i class="bi bi-list"></i>
+                </button>
+                <div>
+                    <h5 class="mb-0">
+                        {% if room.room_type == 'private' %}<i class="bi bi-lock me-2"></i>{% endif %}
+                        {{ room.name }}
+                    </h5>
+                    <small class="text-muted">{{ room.description|default:"" }}</small>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-link" data-bs-toggle="dropdown">
+                    <i class="bi bi-three-dots-vertical"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#" onclick="searchMessages()"><i class="bi bi-search me-2"></i>Search</a></li>
+                    {% if room.owner == user %}
+                    <li><a class="dropdown-item" href="{% url 'chat:edit_room' room.slug %}"><i class="bi bi-gear me-2"></i>Settings</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item text-danger" href="{% url 'chat:delete_room' room.slug %}"><i class="bi bi-trash me-2"></i>Delete Room</a></li>
+                    {% else %}
+                    <li><a class="dropdown-item text-danger" href="{% url 'chat:leave_room' room.slug %}"><i class="bi bi-box-arrow-left me-2"></i>Leave Room</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Typing Indicator -->
+        <div class="typing-indicator" id="typingIndicator"></div>
+        
+        <!-- Messages -->
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will be loaded here -->
+            <div class="text-center py-5" id="loadingMessages">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Input Area -->
+        <div class="chat-input-container">
+            <!-- Reply Preview -->
+            <div class="reply-preview" id="replyPreview">
+                <div>
+                    <small class="text-muted">Replying to</small>
+                    <div id="replyContent"></div>
+                </div>
+                <button class="btn btn-sm" onclick="cancelReply()">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            
+            <!-- File Preview -->
+            <div class="file-preview" id="filePreview">
+                <i class="bi bi-file-earmark"></i>
+                <span id="fileName"></span>
+                <button class="btn btn-sm" onclick="cancelFile()">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            
+            <form class="chat-input-form" id="messageForm">
+                <button type="button" class="btn btn-light rounded-circle" onclick="document.getElementById('fileInput').click()">
+                    <i class="bi bi-paperclip"></i>
+                </button>
+                <input type="file" id="fileInput" class="d-none" accept="image/*,.pdf,.doc,.docx">
+                <textarea 
+                    class="chat-input" 
+                    id="messageInput" 
+                    placeholder="Type a message..." 
+                    rows="1"
+                    maxlength="5000"
+                ></textarea>
+                <button type="submit" class="btn btn-primary rounded-circle">
+                    <i class="bi bi-send-fill"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block extra_js %}
+<script>
+    // Configuration passed from Django template
+    const ROOM_SLUG = '{{ room.slug }}';
+    const CURRENT_USER_ID = '{{ user.id }}';
+    const CURRENT_USERNAME = '{{ user.username }}';
+    const WS_URL = `ws://${window.location.host}/ws/chat/${ROOM_SLUG}/`;
+
+    // State
+    let socket = null;
+    let reconnectAttempts = 0;
+    let typingTimeout = null;
+    let isTyping = false;
+    let replyTo = null;
+    let selectedFile = null;
+
+    // Elements
+    const messagesContainer = document.getElementById('chatMessages');
+    const messageForm = document.getElementById('messageForm');
+    const messageInput = document.getElementById('messageInput');
+    const typingIndicator = document.getElementById('typingIndicator');
+    const loadingMessages = document.getElementById('loadingMessages');
+    const fileInput = document.getElementById('fileInput');
+    const filePreview = document.getElementById('filePreview');
+    const replyPreview = document.getElementById('replyPreview');
+
+    // Initialize WebSocket
+    function connect() {
+        socket = new WebSocket(WS_URL);
+        
+        socket.onopen = function() {
+            console.log('WebSocket connected');
+            reconnectAttempts = 0;
+            showToast('Connected', 'You are now connected to the chat', 'success');
+        };
+        
+        socket.onclose = function(e) {
+            console.log('WebSocket closed', e);
+            if (reconnectAttempts < 5) {
+                reconnectAttempts++;
+                setTimeout(connect, 1000 * reconnectAttempts);
+            } else {
+                showToast('Disconnected', 'Unable to connect to chat server', 'error');
+            }
+        };
+        
+        socket.onerror = function(e) {
+            console.error('WebSocket error', e);
+        };
+        
+        socket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            handleMessage(data);
+        };
+    }
+
+    // Handle incoming messages
+    function handleMessage(data) {
+        switch (data.type) {
+            case 'room_info':
+                handleRoomInfo(data);
+                break;
+            case 'message':
+                handleChatMessage(data);
+                break;
+            case 'typing':
+                handleTypingIndicator(data);
+                break;
+            case 'user_join':
+                handleUserJoin(data);
+                break;
+            case 'user_leave':
+                handleUserLeave(data);
+                break;
+            case 'read_receipt':
+                handleReadReceipt(data);
+                break;
+            case 'reaction':
+                handleReaction(data);
+                break;
+            case 'message_edited':
+                handleMessageEdited(data);
+                break;
+            case 'message_deleted':
+                handleMessageDeleted(data);
+                break;
+        }
+    }
+
+    // Handle room info (initial load)
+    function handleRoomInfo(data) {
+        loadingMessages.style.display = 'none';
+        
+        // Load messages
+        data.messages.forEach(msg => {
+            appendMessage(msg);
+        });
+        
+        // Scroll to bottom
+        scrollToBottom();
+        
+        // Update online count
+        updateOnlineUsers(data.online_users);
+        
+        // Show typing users
+        if (data.typing_users.length > 0) {
+            showTypingUsers(data.typing_users);
+        }
+    }
+
+    // Handle new chat message
+    function handleChatMessage(data) {
+        appendMessage({
+            id: data.message_id,
+            content: data.content,
+            sender_id: data.sender_id,
+            sender_username: data.sender_username,
+            sender_avatar: data.sender_avatar,
+            reply_to: data.reply_to,
+            is_encrypted: data.is_encrypted,
+            timestamp: data.timestamp
+        });
+        
+        scrollToBottom();
+        
+        // Mark as read if not own message
+        if (data.sender_id !== CURRENT_USER_ID) {
+            markAsRead(data.message_id);
+        }
+    }
+
+    // Append message to chat
+    function appendMessage(msg) {
+        const isOwn = msg.sender_id === CURRENT_USER_ID;
+        const time = new Date(msg.timestamp).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+        
+        const html = `
+            <div class="message ${isOwn ? 'own' : ''}" data-message-id="${msg.id}">
+                <img src="${msg.sender_avatar || '/static/images/default-avatar.png'}" alt="${msg.sender_username}" class="message-avatar">
+                <div class="message-content">
+                    ${msg.reply_to ? `<div class="reply-quote small text-muted mb-1"><i class="bi bi-reply"></i> Reply</div>` : ''}
+                    <div class="message-bubble">
+                        ${!isOwn ? `<div class="fw-bold small mb-1">${msg.sender_username}</div>` : ''}
+                        <div class="message-text">${escapeHtml(msg.content)}</div>
+                    </div>
+                    <div class="message-meta">
+                        <span data-timestamp="${msg.timestamp}">${time}</span>
+                        ${msg.is_edited ? '<span class="ms-1">(edited)</span>' : ''}
+                    </div>
+                    <div class="message-actions">
+                        <button class="message-action-btn" onclick="replyToMessage('${msg.id}', '${escapeHtml(msg.content)}')" title="Reply">
+                            <i class="bi bi-reply"></i>
+                        </button>
+                        <button class="message-action-btn" onclick="reactToMessage('${msg.id}', '👍')" title="Like">
+                            <i class="bi bi-hand-thumbs-up"></i>
+                        </button>
+                        ${isOwn ? `
+                            <button class="message-action-btn" onclick="editMessage('${msg.id}')" title="Edit">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                            <button class="message-action-btn" onclick="deleteMessage('${msg.id}')" title="Delete">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        ` : ''}
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        messagesContainer.insertAdjacentHTML('beforeend', html);
+    }
+
+    // Handle typing indicator
+    function handleTypingIndicator(data) {
+        if (data.user_id === CURRENT_USER_ID) return;
+        
+        if (data.is_typing) {
+            typingIndicator.textContent = `${data.username} is typing...`;
+        } else {
+            typingIndicator.textContent = '';
+        }
+    }
+
+    // Show typing users
+    function showTypingUsers(userIds) {
+        // This would show multiple typing users
+    }
+
+    // Handle user join
+    function handleUserJoin(data) {
+        updateMemberStatus(data.user_id, true);
+        if (data.user_id !== CURRENT_USER_ID) {
+            showToast('User Joined', `${data.username} joined the room`, 'info');
+        }
+    }
+
+    // Handle user leave
+    function handleUserLeave(data) {
+        updateMemberStatus(data.user_id, false);
+        if (data.user_id !== CURRENT_USER_ID) {
+            showToast('User Left', `${data.username} left the room`, 'info');
+        }
+    }
+
+    // Update member online status
+    function updateMemberStatus(userId, isOnline) {
+        const memberItem = document.querySelector(`.member-item[data-user-id="${userId}"]`);
+        if (memberItem) {
+            const status = memberItem.querySelector('.member-status');
+            if (status) {
+                status.className = `member-status ${isOnline ? 'online' : 'offline'}`;
+            }
+        }
+        updateOnlineCount();
+    }
+
+    // Update online users list
+    function updateOnlineUsers(userIds) {
+        document.querySelectorAll('.member-status').forEach(el => {
+            el.className = 'member-status offline';
+        });
+        
+        userIds.forEach(userId => {
+            updateMemberStatus(userId, true);
+        });
+        
+        updateOnlineCount();
+    }
+
+    // Update online count badge
+    function updateOnlineCount() {
+        const count = document.querySelectorAll('.member-status.online').length;
+        document.getElementById('onlineCount').textContent = count;
+    }
+
+    // Handle read receipt
+    function handleReadReceipt(data) {
+        // Could show read indicators on messages
+    }
+
+    // Handle reaction
+    function handleReaction(data) {
+        // Show reaction on message
+    }
+
+    // Handle message edited
+    function handleMessageEdited(data) {
+        const msgEl = document.querySelector(`.message[data-message-id="${data.message_id}"]`);
+        if (msgEl) {
+            msgEl.querySelector('.message-text').textContent = data.content;
+            const meta = msgEl.querySelector('.message-meta');
+            if (!meta.textContent.includes('(edited)')) {
+                meta.innerHTML += '<span class="ms-1">(edited)</span>';
+            }
+        }
+    }
+
+    // Handle message deleted
+    function handleMessageDeleted(data) {
+        const msgEl = document.querySelector(`.message[data-message-id="${data.message_id}"]`);
+        if (msgEl) {
+            msgEl.querySelector('.message-text').textContent = '[Message deleted]';
+            msgEl.querySelector('.message-bubble').style.opacity = '0.6';
+        }
+    }
+
+    // Send message
+    function sendMessage(content) {
+        if (!socket || socket.readyState !== WebSocket.OPEN) {
+            showToast('Error', 'Not connected to chat server', 'error');
+            return;
+        }
+        
+        socket.send(JSON.stringify({
+            type: 'message',
+            content: content,
+            reply_to: replyTo
+        }));
+        
+        cancelReply();
+    }
+
+    // Send typing indicator
+    function sendTyping(isTyping) {
+        if (!socket || socket.readyState !== WebSocket.OPEN) return;
+        
+        socket.send(JSON.stringify({
+            type: isTyping ? 'typing_start' : 'typing_stop'
+        }));
+    }
+
+    // Mark message as read
+    function markAsRead(messageId) {
+        if (!socket || socket.readyState !== WebSocket.OPEN) return;
+        
+        socket.send(JSON.stringify({
+            type: 'message_read',
+            message_id: messageId
+        }));
+    }
+
+    // React to message
+    function reactToMessage(messageId, emoji) {
+        if (!socket || socket.readyState !== WebSocket.OPEN) return;
+        
+        socket.send(JSON.stringify({
+            type: 'reaction',
+            message_id: messageId,
+            emoji: emoji
+        }));
+    }
+
+    // Edit message
+    function editMessage(messageId) {
+        const msgEl = document.querySelector(`.message[data-message-id="${messageId}"]`);
+        const content = msgEl.querySelector('.message-text').textContent;
+        const newContent = prompt('Edit message:', content);
+        
+        if (newContent && newContent !== content) {
+            socket.send(JSON.stringify({
+                type: 'edit_message',
+                message_id: messageId,
+                content: newContent
+            }));
+        }
+    }
+
+    // Delete message
+    function deleteMessage(messageId) {
+        if (confirm('Are you sure you want to delete this message?')) {
+            socket.send(JSON.stringify({
+                type: 'delete_message',
+                message_id: messageId
+            }));
+        }
+    }
+
+    // Reply to message
+    function replyToMessage(messageId, content) {
+        replyTo = messageId;
+        document.getElementById('replyContent').textContent = content.substring(0, 100) + (content.length > 100 ? '...' : '');
+        replyPreview.classList.add('active');
+        messageInput.focus();
+    }
+
+    // Cancel reply
+    function cancelReply() {
+        replyTo = null;
+        replyPreview.classList.remove('active');
+    }
+
+    // Handle file selection
+    fileInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            selectedFile = file;
+            document.getElementById('fileName').textContent = file.name;
+            filePreview.classList.add('active');
+        }
+    });
+
+    // Cancel file
+    function cancelFile() {
+        selectedFile = null;
+        fileInput.value = '';
+        filePreview.classList.remove('active');
+    }
+
+    // Upload file
+    async function uploadFile(file) {
+        const formData = new FormData();
+        formData.append('file', file);
+        
+        try {
+            const response = await fetch(`/chat/room/${ROOM_SLUG}/upload/`, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': getCookie('csrftoken')
+                }
+            });
+            
+            if (response.ok) {
+                const data = await response.json();
+                showToast('Success', 'File uploaded successfully', 'success');
+                return data;
+            } else {
+                const error = await response.json();
+                showToast('Error', error.error || 'Failed to upload file', 'error');
+            }
+        } catch (e) {
+            showToast('Error', 'Failed to upload file', 'error');
+        }
+        return null;
+    }
+
+    // Scroll to bottom
+    function scrollToBottom() {
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    // Toggle sidebar (mobile)
+    function toggleSidebar() {
+        document.getElementById('chatSidebar').classList.toggle('show');
+    }
+
+    // Search messages
+    function searchMessages() {
+        const query = prompt('Search messages:');
+        if (query) {
+            // Implement search
+        }
+    }
+
+    // Escape HTML
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    // Get CSRF token
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    // Event listeners
+    messageForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const content = messageInput.value.trim();
+        
+        if (selectedFile) {
+            await uploadFile(selectedFile);
+            cancelFile();
+        }
+        
+        if (content) {
+            sendMessage(content);
+            messageInput.value = '';
+        }
+        
+        sendTyping(false);
+        isTyping = false;
+    });
+
+    messageInput.addEventListener('input', function() {
+        // Auto-resize textarea
+        this.style.height = 'auto';
+        this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+        
+        // Send typing indicator
+        if (!isTyping) {
+            isTyping = true;
+            sendTyping(true);
+        }
+        
+        clearTimeout(typingTimeout);
+        typingTimeout = setTimeout(() => {
+            isTyping = false;
+            sendTyping(false);
+        }, 2000);
+    });
+
+    messageInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            messageForm.dispatchEvent(new Event('submit'));
+        }
+    });
+
+    // Connect on page load
+    connect();
+
+    // Handle page visibility
+    document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'visible' && socket.readyState !== WebSocket.OPEN) {
+            connect();
+        }
+    });
+</script>
+{% endblock extra_js %}
